@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import Datas from "./pages/Datas";
+import Results from "./components/Results"
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,7 +13,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/:searchInput",
-    element: <Datas />
+    element: <Datas />,
+    children: [
+      {
+        index: true,
+        element: <Results />
+      }
+    ]
   }
 ])
 function App() {
