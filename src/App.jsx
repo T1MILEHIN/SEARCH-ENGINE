@@ -1,8 +1,23 @@
+import Home from "./pages/Home";
+import Datas from "./pages/Datas";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/:searchInput",
+    element: <Datas />
+  }
+])
 function App() {
   return (
-    <div className="">
-      <h1 className="text-lg lg:text-4xl text-center font-bold">LET'S BUILD A SEARCH ENGINE</h1>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
