@@ -18,6 +18,7 @@ const Datas = ({nightMode, toggleNightMode})=> {
     }
     const onSubmit = (e)=> {
         e.preventDefault()
+        alert(search.includes("img"))
         if (search.includes("img" || "image" || "images")) navigate(`/${search}/img`)
         if (search.includes("/")) navigate(`/${search.replaceAll("/", "%")}/web`)
         else navigate(`/${search}/web`)
