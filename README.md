@@ -1,4 +1,4 @@
-# THIS IS A SEARCH ENGINE I BUILT USING REACT AND TAILWIND CSS
+# A Search Engine built using React and Tailwind CSS
 
 [Click to view app](https://search-engine-one-alpha.vercel.app/).
 
