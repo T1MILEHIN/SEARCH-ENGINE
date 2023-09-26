@@ -25,7 +25,7 @@ const WebOrImg = ({nightMode})=> {
             <div className="px-2 py-4 flex flex-col gap-4">
                 {searches}
             </div>
-            <div className="border-2">
+            <div className="">
                 {images}
             </div>
         </div>
