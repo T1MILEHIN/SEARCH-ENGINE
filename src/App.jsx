@@ -1,31 +1,44 @@
+import { useState } from "react";
 import Home from "./pages/Home";
 import Datas from "./pages/Datas";
-import Results from "./components/Results"
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import Results from "./components/Results";
+import WebOrImg from "./components/WebOrImg";
+import ErrorElement from "./components/ErrorElement";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/:searchInput",
-    element: <Datas />,
-    children: [
-      {
-        index: true,
-        element: <Results />
-      }
-    ]
-  }
-])
 function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  const [nightMode, setNightMode] = useState(false);
+  const toggleNightMode = () => {
+    setNightMode((prev) => !prev);
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+      errorElement: <ErrorElement />,
+    },
+    {
+      path: "/:searchInput",
+      element: (
+        <Datas nightMode={nightMode} toggleNightMode={toggleNightMode} />
+      ),
+      children: [
+        {
+          path: "",
+          element: <Results nightMode={nightMode} />,
+          children: [
+            {
+              path: ":type",
+              element: <WebOrImg nightMode={nightMode} />,
+            },
+          ],
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;
