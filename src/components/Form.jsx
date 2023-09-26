@@ -17,7 +17,7 @@ const Form = ()=> {
     }
     const onSubmit = (e)=> {
         e.preventDefault()
-        if (search.includes("img" || "image" || "images")) navigate(`/${search}/img`)
+        if (search.includes("img") || search.includes("image") || search.includes("images")) navigate(`/${search}/img`)
         else if (search.includes("/")) navigate(`/${search.replaceAll("/", "%")}/web`)
         else navigate(`/${search}/web`)
     }

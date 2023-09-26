@@ -18,16 +18,9 @@ const Datas = ({nightMode, toggleNightMode})=> {
     }
     const onSubmit = (e)=> {
         e.preventDefault()
-        alert(search.includes("img"))
-        if (search.includes("img") || search.includes("image") || search.includes("images")) {
-            navigate(`/${search}/img`)
-        }
-        if (search.includes("/")) {
-            navigate(`/${search.replaceAll("/", "%")}/web`)
-        }
-        else {
-            navigate(`/${search}/web`)
-        }
+        if (search.includes("img") || search.includes("image") || search.includes("images")) navigate(`/${search}/img`)
+        else if (search.includes("/")) navigate(`/${search.replaceAll("/", "%")}/web`)
+        else navigate(`/${search}/web`)
     }
 
     const {data} = SearchApiHook(search)
