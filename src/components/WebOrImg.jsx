@@ -12,7 +12,7 @@ const WebOrImg = ({nightMode})=> {
 
     if (isLoading) return <Loader />
     if (error?.response?.status === 404) error.message = `${searchValue} does not Exist`;
-    if (error?.response?.status === 429) error.message = "Search limit Exceeded"
+    if (error?.response?.status === 429) error.message = `Search limit Exceeded😥`
     if (error) return <motion.p initial={{y:'-30px', opacity:0}} animate={{y:0, opacity:1}} className="min-h-screen grid place-items-center font-extrabold text-center text-xl lg:text-4xl text-red-600">{error.message}</motion.p>
     const WEB = data?.data?.items.map((search, index)=> <SearchDisplay key={index} {...search} searchValue={searchValue}  />)
     const IMG = data?.data?.items.map((img, index)=> <ImageDisplay key={index} {...img} />)
