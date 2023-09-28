@@ -12,7 +12,7 @@ const dropUl = {
         opacity: 1,
         y: 0,
         transition: {
-            type: "spring", stiffness: 250, duration: 0.2, when: "beforeChildren", staggerChildren: 2
+            type: "spring", stiffness: 250, duration: 0.2, when: "beforeChildren", staggerChildren: 0.3
         }
     }
 }
