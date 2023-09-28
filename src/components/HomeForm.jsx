@@ -45,6 +45,7 @@ const Form = ()=> {
         if (search.includes("img") || search.includes("image") || search.includes("images")) navigate(`/${search}/img`)
         else if (search.includes("/")) navigate(`/${search.replaceAll("/", "%")}/web`)
         else navigate(`/${search}/web`)
+        setShowDropDown(false)
     }
     const {data} = SearchApiHook(search)
     const examples = data?.data?.items.map((search, index)=> index < 3 && <Link to={`/${search.title}/web`} key={index}><motion.p variants={li} onClick={()=> removeDropDown()} className="font-bold hover:text-blue-400 duration-300">{search.title}</motion.p></Link> )

@@ -12,7 +12,7 @@ const dropUl = {
         opacity: 1,
         y: 0,
         transition: {
-            type: "spring", stiffness: 250, duration: 1, when: "beforeChildren", staggerChildren: 2
+            type: "spring", stiffness: 250, duration: 0.2, when: "beforeChildren", staggerChildren: 2
         }
     }
 }
@@ -27,7 +27,6 @@ const li = {
         x: 0,
     }
 }
-
 
 const DataForm = ()=> {
     const { searchInput } = useParams();
@@ -47,6 +46,7 @@ const DataForm = ()=> {
         if (search.includes("img") || search.includes("image") || search.includes("images")) navigate(`/${search}/img`)
         else if (search.includes("/")) navigate(`/${search.replaceAll("/", "%")}/web`)
         else navigate(`/${search}/web`)
+        setShowDropDown(false)
     }
     const {data} = SearchApiHook(search)
     const examples = data?.data?.items.map((search, index)=> index < 3 && <Link to={`/${search.title}/web`} key={index}><motion.p variants={li} onClick={removeDropDown} className="font-bold hover:text-blue-400 duration-300">{search.title}</motion.p></Link> )
@@ -57,7 +57,7 @@ const DataForm = ()=> {
                     <input type="text" onBlur={removeDropDown} onChange={inputSearch} value={search} name="search" id="search" className={`pl-1 md:pl-2 font-bold border-black border-2 placeholder:text-black text-sm md:text-xl placeholder:font-bold placeholder:tracking-wider w-full h-8 md:h-10 rounded md:rounded-md focus:ring duration-300`} placeholder="Search Anything" />
                     <AnimatePresence>
                         {data?.data?.items && showDropDown &&
-                        <motion.ul variants={dropUl} className={`shadow-lg absolute text-xs md:text-lg top-10 bg-white p-2 rounded-md leading-7 divide-y-2`}>
+                        <motion.ul variants={dropUl} initial="initial" animate="final" className={`shadow-lg absolute text-xs md:text-lg top-10 bg-white p-2 rounded-md leading-7 divide-y-2`}>
                             {examples}
                         </motion.ul>}
                     </AnimatePresence>
