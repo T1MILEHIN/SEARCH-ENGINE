@@ -28,7 +28,7 @@ const li = {
         transition: {
             type: "spring",
             stiffness: 250,
-            duration: .3
+            duration: 0.2
         }
     }
 }
