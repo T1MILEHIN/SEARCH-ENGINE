@@ -49,7 +49,7 @@ const DataForm = ()=> {
         setShowDropDown(false)
     }
     const {data} = SearchApiHook(search)
-    const examples = data?.data?.items.map((search, index)=> index < 3 && <Link to={`/${search.title}/web`} key={index}><motion.p variants={li} onClick={removeDropDown} className="font-bold hover:text-blue-400 duration-300">{search.title}</motion.p></Link> )
+    const examples = data?.data?.items.map((search, index)=> index < 3 && <Link to={`${search.link}`} key={index}><motion.p variants={li} onClick={removeDropDown} className="font-bold hover:text-blue-400 duration-300">{search.title}</motion.p></Link> )
     return (
         <form onSubmit={onSubmit} action="">
             <div className="my-5 flex md:gap-5 gap-1">
