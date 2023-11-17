@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const SearchApiHook = (searchValue)=> {
-    const APIkey = "AIzaSyB2pqTADxjHb5quJPCxOxMjOA0oOlXDqjM";
+    const APIkey = "AIzaSyDkFGe_A7F0nRK8kWe2j2B74vG_x59nnPA";
     // working AIzaSyDkFGe_A7F0nRK8kWe2j2B74vG_x59nnPA
     // Not working AIzaSyB2pqTADxjHb5quJPCxOxMjOA0oOlXDqjM
     const engineID = "c7d1f89829903401e"
