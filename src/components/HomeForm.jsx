@@ -25,6 +25,11 @@ const li = {
     final: {
         opacity: 1,
         x: 0,
+        transition: {
+            duration: .3,
+            type: 'spring',
+            stiffness: 200,
+        }
     }
 }
 
