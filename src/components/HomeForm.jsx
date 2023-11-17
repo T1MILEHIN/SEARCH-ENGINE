@@ -26,9 +26,9 @@ const li = {
         opacity: 1,
         x: 0,
         transition: {
-            duration: .3,
-            type: 'spring',
-            stiffness: 200,
+            type: "spring",
+            stiffness: 250,
+            duration: .3
         }
     }
 }
