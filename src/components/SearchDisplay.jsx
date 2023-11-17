@@ -8,7 +8,7 @@ const SearchDisplay = ({searchValue ,cacheId, title, link, snippet, displayLink,
             <div className='text-sm md:text-lg'>
                 <a href={link} className="font-black text-blue-400 underline underline-offset-2">{title}</a>
                 <p className="font-thin text-green-400">{displayLink}</p>
-                <p className="text-slate-100">{snippet}</p>
+                <p className="text-black">{snippet}</p>
             </div>
         </div>
     )
