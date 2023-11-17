@@ -40,6 +40,7 @@ const DataForm = ()=> {
     }
     const removeDropDown = (title)=> {
         setShowDropDown(false)
+        console.log(title)
         navigate(`/${title}/web`)
     }
     const onSubmit = (e)=> {
