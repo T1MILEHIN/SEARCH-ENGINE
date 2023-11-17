@@ -12,7 +12,7 @@ const dropUl = {
         opacity: 1,
         y: 0,
         transition: {
-            type: "spring", stiffness: 250, duration: 0.2, staggerChildren: 0.5, delayChildren:0.5
+            type: "spring", stiffness: 250, duration: 0.2, staggerChildren: 0.2, delayChildren:0.3
         }
     }
 }
@@ -25,11 +25,6 @@ const li = {
     final: {
         opacity: 1,
         x: 0,
-        transition: {
-            type: "spring",
-            stiffness: 250,
-            duration: 0.2
-        }
     }
 }
 
