@@ -21,7 +21,6 @@ const WebOrImg = ({nightMode})=> {
     const images = type === "img" && <motion.p initial={{y:'-30px', opacity:0}} animate={{y:0, opacity:1}} className="min-h-screen grid place-items-center font-extrabold text-center text-sm lg:text-4xl text-black">NO IMAGE</motion.p>
     return (
         <div className={`${nightMode && "bg-slate-800"} duration-300`}>
-            {/* {type === "web" && <p className="pl-2">About {data?.data?.searchInformation.formattedTotalResults} results ({data?.data?.searchInformation.formattedSearchTime} seconds)</p>} */}
             {type === "web" && <p className="pl-2">About {data?.data?.items.length} results ({data?.data?.searchInformation.formattedSearchTime} seconds)</p>}
             <hr />
             <div className="px-2 py-4 flex flex-col gap-4">

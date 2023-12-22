@@ -49,7 +49,6 @@ const DataForm = ()=> {
         setShowDropDown(false)
     }
     const {data} = SearchApiHook(search)
-    const examples = data?.data?.items.map((SEARCH, index)=> index < 3 && <Link to={`/${SEARCH.title}/web`} key={index}><motion.p variants={li} className="font-bold hover:text-blue-400 duration-300">{SEARCH.title}</motion.p></Link> )
     return (
         <form onSubmit={onSubmit} action="">
             <div className="my-5 flex md:gap-5 gap-1">
@@ -58,7 +57,9 @@ const DataForm = ()=> {
                     <AnimatePresence>
                         {data?.data?.items && showDropDown &&
                         <motion.ul variants={dropUl} initial="initial" animate="final" className={`shadow-lg absolute text-xs md:text-lg top-10 bg-white p-2 rounded-md leading-7 divide-y-2`}>
-                            {examples}
+                            {data?.data?.items.map((SEARCH, index)=> index < 3 &&
+                                <Link to={`/${search}/web`} key={index}><motion.p variants={li} className="font-bold hover:text-blue-400 duration-300">{SEARCH.title}</motion.p></Link> 
+                            )}
                         </motion.ul>}
                     </AnimatePresence>
                 </div>

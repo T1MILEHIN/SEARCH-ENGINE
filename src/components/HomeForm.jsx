@@ -49,7 +49,7 @@ const Form = ()=> {
     }
     const {data} = SearchApiHook(search)
     console.log(data?.data)
-    const examples = data?.data?.items.map((SEARCH, index)=> index < 3 && <a href={`${SEARCH.link}`} key={index}><motion.p variants={li} className="font-bold hover:text-blue-400 duration-300">{SEARCH.title}</motion.p></a> )
+    const examples = data?.data?.items.map((SEARCH, index)=> index < 3 && <Link to={`/${search}/web`} key={index}><motion.p variants={li} className="font-bold hover:text-blue-400 duration-300">{SEARCH.title}</motion.p></Link> )
     return (
         <form onSubmit={onSubmit} action="">
             <div className="my-2 md:my-5 flex md:gap-5 gap-1">
